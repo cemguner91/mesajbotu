@@ -84,6 +84,7 @@ async def send_messages():
             print("Hata:", e)
         await asyncio.sleep(60 * 60)  # 30 dakika
 
+
 if __name__ == '__main__':
     import random
     asyncio.run(send_messages())
