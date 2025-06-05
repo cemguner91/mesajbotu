@@ -1,9 +1,12 @@
 import asyncio
 from telegram import Bot
 from telegram.constants import ParseMode
+import os
 
-TOKEN = "7804674720:AAEBJIDQb5WcWpy7GoPeb5-ovAHe_867xk0"
-CHAT_ID = 6122085074
+
+TOKEN = os.getenv("TOKEN") or "7804674720:AAEBJIDQb5WcWpy7GoPeb5-ovAHe_867xk0"
+CHAT_ID = int(os.getenv("CHAT_ID") or "6122085074")
+
 
 messages = [
     "Gülüşün bir şiir gibi, her kelimesi huzur 🍃",
@@ -80,6 +83,7 @@ async def send_messages():
         except Exception as e:
             print("Hata:", e)
         await asyncio.sleep(60 * 60)  # 30 dakika
+
 
 if __name__ == '__main__':
     import random
